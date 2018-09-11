@@ -10,6 +10,8 @@ contract Bank is Regulator {
     
     uint private value; 
     
+// Value = User's Bank Balance 
+
     function Bank(uint amount){
         value = amount ; 
     }
@@ -33,7 +35,7 @@ contract Bank is Regulator {
     }
      function checkValue(uint amount) returns (bool){
         
-        return amount >= value;
+        return amount <= value;
     }
     
 }
