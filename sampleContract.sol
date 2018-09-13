@@ -1,9 +1,25 @@
 pragma solidity ^0.4.23; 
 
 
-// Create Getters and Setters 
+contract Owned {
+    address owner; 
+    
+    function owned() public {
+        owner = msg.sender;
+    }
+    
+    modifier onlyOwner{
+        require(msg.sender == owner);
+        _;
+    }
+}
+
 
 contract smartContract {
+    
+    address owner ; 
+    
+    
     
     struct Instructor{
         bytes name;
